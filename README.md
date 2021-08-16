@@ -1,39 +1,18 @@
 # jianmu-runner-image-build
 
 #### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+用于通过Dockerfile创建镜像，并推送至镜像仓库  
 
-#### 软件架构
-软件架构说明
+#### 参数说明  
+```
+JIANMU_DOCKER_USERNAME: docker仓库用户  
+JIANMU_DOCKER_PASSWORD: docker仓库用户密码  
+JIANMU_IMAGE_NAME: docker镜像名  
+JIANMU_IMAGE_TAG: docker镜像tag
+JIANMU_DOCKER_FILE: Dockerfile文件路径
+JIANMU_DOCKER_BUILD_PATH: 镜像构建目录
+JIANMU_WORKSPACE: 执行构建命令的目录
+JIANMU_CMD_PRE: 构建前执行命令
+JIANMU_CMD_POST: 构建后执行命令
+```
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

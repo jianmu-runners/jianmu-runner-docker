@@ -1,0 +1,52 @@
+name: docker镜像构建
+description: 根据参数构建对应docker镜像，并推送到dockerhub
+owner: jianmu
+source: https://gitee.com/jianmu-runners/jianmu-runner-image-build
+docs: https://gitee.com/jianmu-runners/jianmu-runner-image-build
+ref: image_build
+version: v3.0
+type: DOCKER
+inputParameters:
+  - ref: docker_username
+    name: dockerhub用户
+    type: SECRET
+    value: ((dockerhub.username))
+  - ref: docker_password
+    name: dockerhub用户密码
+    type: SECRET
+    value: ((dockerhub.password))
+  - ref: image_name
+    name: 镜像名称
+    type: STRING
+    value: user/name
+  - ref: image_tag
+    name: 镜像tag
+    type: STRING
+    value: latest
+  - ref: docker_file
+    name: 指定Dockerfile文件
+    type: STRING
+    value: Dockerfile
+  - ref: docker_build_path
+    name: 镜像构建目录
+    type: STRING
+    value: .
+  - ref: workspace
+    name: 执行构建命令的目录
+    type: STRING
+    value: .
+  - ref: cmd_pre
+    name: 构建前执行命令
+    type: STRING
+    value: ls
+  - ref: cmd_post
+    name: 构建后执行命令
+    type: STRING
+    value: date
+spec:
+  image: docker:20.10.6
+  entrypoint:
+    - /bin/sh
+    - "-c"
+  cmd:
+    - cd ${JIANMU_WORKSPACE} && pwd && ${JIANMU_CMD_PRE} && docker login -u ${JIANMU_DOCKER_USERNAME} -p ${JIANMU_DOCKER_PASSWORD} && docker build -f ${JIANMU_DOCKER_FILE} -t ${JIANMU_IMAGE_NAME}:${JIANMU_IMAGE_TAG} ${JIANMU_DOCKER_BUILD_PATH} && docker push ${JIANMU_IMAGE_NAME}:${JIANMU_IMAGE_TAG} && ${JIANMU_CMD_POST}
