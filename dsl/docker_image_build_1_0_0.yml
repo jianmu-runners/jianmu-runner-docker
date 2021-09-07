@@ -1,11 +1,5 @@
-name: docker镜像构建
-description: 根据参数构建对应docker镜像，并推送到dockerhub
-owner: jianmu
-source: https://gitee.com/jianmu-runners/jianmu-runner-image-build
-docs: https://gitee.com/jianmu-runners/jianmu-runner-image-build
-ref: image_build
-version: v3.0
-type: DOCKER
+ref: docker_image_build
+version: 1.0.0
 inputParameters:
   - ref: docker_username
     name: dockerhub用户
