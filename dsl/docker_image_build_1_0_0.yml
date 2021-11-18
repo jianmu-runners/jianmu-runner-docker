@@ -1,18 +1,18 @@
 ref: docker_image_build
-version: 1.0.0
+version: 1.1.0
 inputParameters:
   - ref: docker_username
     name: dockerhub用户
     type: SECRET
-    value: ((dockerhub.username))
+    required: true
   - ref: docker_password
     name: dockerhub用户密码
     type: SECRET
-    value: ((dockerhub.password))
+    required: true
   - ref: image_name
     name: 镜像名称
     type: STRING
-    value: user/name
+    required: true
   - ref: image_tag
     name: 镜像tag
     type: STRING
