@@ -6,7 +6,7 @@
 #### 输入参数 
 ```
 JIANMU_DOCKER_USERNAME: docker仓库用户  
-JIANMU_DOCKER_PASSWORD: docker仓库用户密码  
+JIANMU_DOCKER_PASSWORD: docker仓库用户密钥或密码
 JIANMU_IMAGE_NAME: docker镜像名  
 JIANMU_IMAGE_TAG: docker镜像tag
 JIANMU_DOCKER_FILE: Dockerfile文件路径
