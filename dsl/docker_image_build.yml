@@ -6,7 +6,7 @@ inputParameters:
     type: SECRET
     required: true
   - ref: docker_password
-    name: dockerhub用户密码
+    name: dockerhub用户密钥/密码
     type: SECRET
     required: true
   - ref: image_name
