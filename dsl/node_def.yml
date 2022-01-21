@@ -1,6 +1,6 @@
 ref: docker_image_build
 version: 1.1.0
-description: 增加registry_address参数，指定push的仓库地址，默认push到dockerbub
+description: 增加registry_address参数，指定push的仓库地址，默认push到dockerhub
 inputParameters:
   - ref: docker_username
     name: dockerhub用户
