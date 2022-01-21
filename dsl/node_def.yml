@@ -1,5 +1,5 @@
 ref: docker_image_build
-version: 1.0.1
+version: 1.1.0
 inputParameters:
   - ref: docker_username
     name: dockerhub用户
@@ -17,6 +17,11 @@ inputParameters:
     name: 镜像tag
     type: STRING
     value: latest
+  - ref: registry_address
+    name: 指定registry地址
+    description: "若不填写，默认push到dockerhub"
+    type: STRING
+    value: ""
   - ref: docker_file
     name: 指定Dockerfile文件
     type: STRING
@@ -43,4 +48,4 @@ spec:
     - /bin/sh
     - "-c"
   cmd:
-    - cd ${JIANMU_WORKSPACE} && pwd && ${JIANMU_CMD_PRE} && docker login -u ${JIANMU_DOCKER_USERNAME} -p ${JIANMU_DOCKER_PASSWORD} && docker build -f ${JIANMU_DOCKER_FILE} -t ${JIANMU_IMAGE_NAME}:${JIANMU_IMAGE_TAG} ${JIANMU_DOCKER_BUILD_PATH} && docker push ${JIANMU_IMAGE_NAME}:${JIANMU_IMAGE_TAG} && ${JIANMU_CMD_POST}
+    - cd ${JIANMU_WORKSPACE} && pwd && ${JIANMU_CMD_PRE} && docker login -u ${JIANMU_DOCKER_USERNAME} -p ${JIANMU_DOCKER_PASSWORD} ${JIANMU_REGISTRY_ADDRESS} && docker build -f ${JIANMU_DOCKER_FILE} -t ${JIANMU_IMAGE_NAME}:${JIANMU_IMAGE_TAG} ${JIANMU_DOCKER_BUILD_PATH} && docker push ${JIANMU_IMAGE_NAME}:${JIANMU_IMAGE_TAG} && ${JIANMU_CMD_POST}

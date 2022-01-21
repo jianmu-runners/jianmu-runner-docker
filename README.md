@@ -12,6 +12,7 @@ JIANMU_IMAGE_TAG: docker镜像tag
 JIANMU_DOCKER_FILE: Dockerfile文件路径
 JIANMU_DOCKER_BUILD_PATH: 镜像构建目录
 JIANMU_WORKSPACE: 执行构建命令的目录
+JIANMU_REGISTRY_ADDRESS: registry地址，默认为dockerhub
 JIANMU_CMD_PRE: 构建前执行命令
 JIANMU_CMD_POST: 构建后执行命令
 ```
